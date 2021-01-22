@@ -57,6 +57,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    debugImplementation project(':xperf')
-    releaseImplementation project(':xperf-noop')
+//    debugImplementation project(':xperf')
+//    releaseImplementation project(':xperf-noop')
+    api 'com.zgy.xperf:xperf:0.0.1'
+
+    api project(':test')
 }

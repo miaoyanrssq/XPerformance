@@ -17,10 +17,10 @@
 //项目build.gradle中
 classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.8'
 
-//module 的build.gradle中
+//app 的build.gradle中，只需在app中配置即可同于全部module
 apply plugin: 'android-aspectjx'
 aspectjx{
-    //包名，如果不配置，则匹配所有
+    //包名，如果不配置，则匹配所有,如果限制包名，请在此处添加com.zgy，否则运行时会出现文件找不到的问题
     include 'com.zgy'
     //剔除某些包
     exclude 'com.zgy'

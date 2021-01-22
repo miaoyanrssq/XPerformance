@@ -51,6 +51,14 @@ class ActivityHooker {
     @Throws(Throwable::class)
     fun showTime(joinPoint: JoinPoint){
         val signature = joinPoint.signature
+        //过滤页面关闭等导致的onWindowFocusChanged调用，否则页面跳转的时候会调用前一个页面的onWindowFocusChanged
+        val obj = joinPoint.args
+        if(obj.isNotEmpty()){
+            val show = obj[0]
+            if(show is Boolean && !show){
+                return
+            }
+        }
         if(!record.isNewCreate){
             return
         }

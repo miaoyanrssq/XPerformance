@@ -1,3 +1,4 @@
+include ':test'
 include ':xperf-noop'
 include ':xperf'
 include ':app'
